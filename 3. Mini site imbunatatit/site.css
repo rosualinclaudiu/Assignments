@@ -1,10 +1,55 @@
+
+body {
+    font-family: serif;
+    font-style: normal;
+    background-color: honeydew;
+}
+
+strong {
+    font-size: 18px;
+}
+
 aside {
     display: inline-block;
     vertical-align: top;
-    padding-right: 8px;
-    border-right: 1px;
+    width: 250px;
+    padding-right: 10px;
 }
 
 section {
     display: inline-block;
+    width: 900px;
+    padding-left: 10px;
+    border-left: 1px solid rgb(165, 163, 163);
+}
+
+table {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    border-collapse: collapse;
+    border-style: double;
+}
+
+th {
+    border-style: double;
+    border-color: black;
+}
+
+td {
+    border: solid 1px rgb(165, 163, 163);
+}
+
+th {
+    padding: 14px;
+    font-size: 16px;
+    text-align: justify;
+    background-color: burlywood;
+    color: whitesmoke;
+}
+
+td {
+    padding: 10px;
+}
+.work {
+    background-color: lavender;
 }
