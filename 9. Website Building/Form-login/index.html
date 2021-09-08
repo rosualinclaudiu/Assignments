@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2 - Website Building</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        #login-container {
+            width: 460px;
+            margin: 0 auto;
+        }
+
+        form label,
+        form input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form input {
+            padding: 8px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form div {
+            margin: 16px 0px;
+        }
+
+    </style>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+        integrity="sha384-haqrlim99xjfMxRP6EWtafs0sB1WKcMdynwZleuUSwJR0mDeRYbhtY+KPMr+JL6f"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="login-container">
+
+        <form name="myForm" action="#" onsubmit="validate()">
+            <div>
+                <label for="username">Username:</label>
+                <input id="username" type="text" class="form-control">
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <input id="password" type="password" class="form-control">
+            </div>
+
+            <input id="login-button" type="submit" value="Login">
+            
+            <p class="userError"></p>
+            <p class="passError"></p>
+        </form>
+
+    </div>
+
+    <script src="JS/jquery-3.6.0.slim.min.js"></script>
+
+    <script>
+
+        $("#login-container").submit(function (e) {
+
+            e.preventDefault();
+            console.log("Username: " + $("#username").val() + "\n" + "Password: " + $("#password").val());
+
+        });
+
+        function validate() {
+            var userInput = $("#username").val();
+            var passInput = $("#password").val();
+
+            if(userInput == "") {
+                $(".userError").html("*please, enter a username" + " " + '<i class="fas fa-times fa-1x" style="color: red;"></i>');
+                $("#username").css("border-color", "red");
+            }
+            else if(userInput != "new_user") {
+                $(".userError").html("*please, enter valid username" + " " + '<i class="fas fa-times fa-1x" style="color: red;"></i>');
+                $("#username").css("border-color", "red");
+            }
+            else {
+                $(".userError").html('<i class="fas fa-check fa-2x" style="color: green;"></i>');
+                $("#username").css("border-color", "green");
+            }
+
+            if(passInput == "") {
+                $(".passError").html("*please, enter a password" + " " + '<i class="fas fa-times fa-1x" style="color: red;"></i>');
+                $("#password").css("border-color", "red");
+            }
+            else if(passInput == 123456789) {
+                $(".passError").html('<i class="fas fa-check fa-2x" style="color: green;"></i>');
+                $("#password").css("border-color", "green");
+            }
+            else {
+                $(".passError").html("*please, enter valid password" + " " + '<i class="fas fa-times fa-1x" style="color: red;"></i>');
+                $("#password").css("border-color", "red");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
