@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Student {
+            constructor(name, address, phone, course) {
+                this.name = name,
+                    this.address = address,
+                    this.phone = phone,
+                    this.course = course
+            }
+            getInfo() {
+                console.log("Name: " + this.name + ",", "Address: " +
+                    this.address + ",", "Phone Number: " + this.phone + ",", "Course: " +
+                    this.course)
+            }
+
+        }
+
+        let StudentOne = new Student("Cora Amos", "Belford Roxo Nr:1001", 8648477096, "Biologie")
+        let StudentTwo = new Student("Damien Azhar", "Bloomfield Way Nr:1127", 7785916167, "Arte")
+        let StudentThree = new Student("Iman Hans-Jürgen", "Owen Lane Nr:456", 8502634417, "Geografie")
+
+        StudentOne.getInfo();
+        StudentTwo.getInfo();
+        StudentThree.getInfo();
+    </script>
+</body>
+
+</html>
