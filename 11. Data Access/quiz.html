@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz JSON</title>
+
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            padding: 2% 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let promise = fetch('quiz.json').then(function(response) {
+            if (!response.ok) {
+                throw Error("Error while reading this file.");
+            }
+            return response.json();
+
+            var data = JSON.parse(json);
+
+        }).then(function(data) {
+
+            document.body.innerHTML += '<h2>' + data.quiz.q1.question + '</h2>';
+            for (let i = 0; i < data.quiz.q1.options.length; i++) {
+                document.body.innerHTML += '<input class="radioBtn" type="radio"' + '<ul>' + data.quiz.q1.options[i] + '<br>' + '</ul>';
+            }
+
+            document.body.innerHTML += '<h2>' + data.quiz.q2.question + '</h2>';
+            for (let i = 0; i < data.quiz.q2.options.length; i++) {
+                document.body.innerHTML += '<input class="radioBtn" type="radio"' + '<ul>' + data.quiz.q2.options[i] + '<br>' + '</ul>';
+            }
+
+            document.body.innerHTML += '<h2>' + data.quiz.q3.question + '</h2>';
+            for (let i = 0; i < data.quiz.q3.options.length; i++) {
+                document.body.innerHTML += '<input class="radioBtn" type="radio"' + '<ul>' + data.quiz.q3.options[i] + '<br>' + '</ul>';
+            }
+
+            document.body.innerHTML += '<h2>' + data.quiz.q4.question + '</h2>';
+            for (let i = 0; i < data.quiz.q4.options.length; i++) {
+                document.body.innerHTML += '<input class="radioBtn" type="radio"' + '<ul>' + data.quiz.q4.options[i] + '<br>' + '</ul>';
+            }
+        }).catch(function(err) {
+            console.log('Error: ' + err.message);
+        });
+
+
+
+
+
+        localStorage.setItem('input', 'value')
+
+        var radioBtn = document.getElementsByTagName('input');
+        var val = localStorage.getItem('input');
+        for (var i = 0; i < radioBtn.length; i++) {
+
+            if (radios[i].value == val) {
+                radios[i].checked = true;
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
