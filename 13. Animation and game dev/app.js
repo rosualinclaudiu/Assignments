@@ -23,14 +23,14 @@ function tick() {
     drawStaticElts();
 
     var hours = date.getHours();
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 4;
     drawHand(clockWidth / 3, hours * 30);
 
 
     var minutes = date.getMinutes();
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 3;
     drawHand(clockWidth / 2, hours * 6);
 
     var seconds = date.getSeconds();
@@ -44,8 +44,8 @@ function tick() {
 function drawStaticElts() {
     ctx.beginPath();
     ctx.arc(centerX, centerY, clockWidth / 2, 0, 2 * Math.PI, false);
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 10;
     ctx.stroke();
     ctx.closePath();
 
@@ -64,8 +64,8 @@ function drawStaticElts() {
 
 function drawNumbers() {
     var i = 12;
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
 
 
     while (i > 0) {
