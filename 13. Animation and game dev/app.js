@@ -45,7 +45,7 @@ function drawStaticElts() {
     ctx.beginPath();
     ctx.arc(centerX, centerY, clockWidth / 2, 0, 2 * Math.PI, false);
     ctx.strokeStyle = "blue";
-    ctx.lineWidth = 10;
+    ctx.lineWidth = 8;
     ctx.stroke();
     ctx.closePath();
 
@@ -66,6 +66,8 @@ function drawNumbers() {
     var i = 12;
     ctx.strokeStyle = "red";
     ctx.lineWidth = 4;
+    ctx.font = "13px Arial";
+    ctx.fillStyle = "red";
 
 
     while (i > 0) {
@@ -81,7 +83,7 @@ function drawNumbers() {
         ctx.translate(0, -10)
         ctx.rotate(-angle);
 
-        ctx.fillText(i, -3, 0);
+        ctx.fillText(i, -5, 5);
         ctx.restore();
 
 
