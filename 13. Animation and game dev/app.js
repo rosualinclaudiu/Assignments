@@ -31,12 +31,12 @@ function tick() {
     var minutes = date.getMinutes();
     ctx.strokeStyle = "blue";
     ctx.lineWidth = 3;
-    drawHand(clockWidth / 2, hours * 6);
+    drawHand(clockWidth / 2.3, hours * 6);
 
     var seconds = date.getSeconds();
     ctx.strokeStyle = "red";
     ctx.lineWidth = 1;
-    drawHand(clockWidth / 2, seconds * 6);
+    drawHand(clockWidth / 2.1, seconds * 6);
 
 }
 
@@ -45,7 +45,7 @@ function drawStaticElts() {
     ctx.beginPath();
     ctx.arc(centerX, centerY, clockWidth / 2, 0, 2 * Math.PI, false);
     ctx.strokeStyle = "blue";
-    ctx.lineWidth = 8;
+    ctx.lineWidth = 6;
     ctx.stroke();
     ctx.closePath();
 
@@ -67,6 +67,8 @@ function drawNumbers() {
     ctx.strokeStyle = "red";
     ctx.lineWidth = 4;
     ctx.font = "13px Arial";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
     ctx.fillStyle = "red";
 
 
@@ -83,7 +85,7 @@ function drawNumbers() {
         ctx.translate(0, -10)
         ctx.rotate(-angle);
 
-        ctx.fillText(i, -5, 5);
+        ctx.fillText(i, 0, 0);
         ctx.restore();
 
 
